@@ -1,27 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import LogItem from './LogItem';
 import Preloader from '../layout/Preloader';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getLogs } from '../../actions/logActions';
 
-const Logs = () => {
-  const [logs, setLogs] = useState([]);
-  const [loading, setLoading] = useState(false);
-
+const Logs = ({ log: { logs, loading }, getLogs }) => {
   useEffect(() => {
     getLogs();
 
     // eslint-disable-next-line
   }, []);
 
-  const getLogs = async () => {
-    setLoading(true);
-    const res = await fetch('/logs');
-    const data = await res.json();
-
-    setLogs(data);
-    setLoading(false);
-  };
-
-  if (loading) {
+  if (loading || !logs) {
+    console.log(loading);
     return <Preloader />;
   }
 
@@ -41,4 +33,18 @@ const Logs = () => {
   );
 };
 
-export default Logs;
+Logs.prototype = {
+  logs: PropTypes.object.isRequired,
+  loading: PropTypes.bool,
+};
+
+//Key = prop name, value = name from root reducer [this is to bring state from the reducer]
+const mapStateToProps = state => ({
+  log: state.log, //Bring in the whole state, then it is passed as props to the component
+});
+
+//@param function to bring state, @param actions that will be triggered (these are then passed as props)
+export default connect(
+  mapStateToProps,
+  { getLogs }
+)(Logs);
