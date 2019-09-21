@@ -13,7 +13,6 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
   }, []);
 
   if (loading || !logs) {
-    console.log(loading);
     return <Preloader />;
   }
 
@@ -36,6 +35,7 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
 Logs.prototype = {
   logs: PropTypes.object.isRequired,
   loading: PropTypes.bool,
+  getLogs: PropTypes.func.isRequired,
 };
 
 //Key = prop name, value = name from root reducer [this is to bring state from the reducer]
