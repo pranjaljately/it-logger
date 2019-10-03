@@ -9,7 +9,7 @@
 ### `npm start & npm run json-server`
 
 Runs the app with the backend JSON-Server<br>
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000)<br>
 Server [http://localhost:5000](http://localhost:5000)
 db.json contains data
 
