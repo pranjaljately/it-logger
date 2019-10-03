@@ -10,8 +10,8 @@
 
 Runs the app with the backend JSON-Server<br>
 Open [http://localhost:3000](http://localhost:3000)<br>
-Server [http://localhost:5000](http://localhost:5000)
-db.json contains data
+Server [http://localhost:5000](http://localhost:5000)<br>
+**db.json contains backend data**
 
 ### `npm run build`
 
