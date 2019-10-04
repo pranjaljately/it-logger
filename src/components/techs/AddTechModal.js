@@ -44,7 +44,7 @@ const AddTechModal = ({ addTech }) => {
               value={lastName}
               onChange={e => setLastName(e.target.value)}
             />
-            <label htmlFor='firstName' className='active'>
+            <label htmlFor='lastName' className='active'>
               Last Name
             </label>
           </div>

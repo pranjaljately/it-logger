@@ -1,6 +1,6 @@
 import {
   GET_LOGS,
-  SET_LOADING,
+  SET_LOGS_LOADING,
   LOGS_ERROR,
   ADD_LOG,
   DELETE_LOG,
@@ -61,7 +61,7 @@ export default (state = initalState, action) => {
         ...state,
         current: null,
       };
-    case SET_LOADING:
+    case SET_LOGS_LOADING:
       return {
         ...state,
         loading: true,

@@ -1,6 +1,6 @@
 import {
   GET_LOGS,
-  SET_LOADING,
+  SET_LOGS_LOADING,
   LOGS_ERROR,
   ADD_LOG,
   DELETE_LOG,
@@ -149,6 +149,6 @@ export const clearCurrent = () => {
 
 export const setLoading = () => {
   return {
-    type: SET_LOADING,
+    type: SET_LOGS_LOADING,
   };
 };

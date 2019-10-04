@@ -3,7 +3,7 @@ import {
   ADD_TECH,
   DELETE_TECH,
   TECHS_ERROR,
-  SET_LOADING,
+  SET_TECHS_LOADING,
 } from './types';
 
 export const getTechs = () => async dispatch => {
@@ -72,6 +72,6 @@ export const deleteTech = id => async dispatch => {
 
 export const setLoading = () => {
   return {
-    type: SET_LOADING,
+    type: SET_TECHS_LOADING,
   };
 };
